@@ -1,6 +1,6 @@
 import createHeading from './heading.js'
 import './main.css'
-import footerHteml from './footer.html'
+// import footerHteml from './footer.html'
 import icon from './icon.png'
 const heading = createHeading()
 

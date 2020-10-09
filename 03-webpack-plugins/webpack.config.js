@@ -12,6 +12,7 @@ module.exports = {
     module: {
         rules: [
             { test: /\.css$/, use:['style-loader', 'css-loader'] },
+            { test: /\.hbs$/, use: "handlebars-loader" },
             { 
                 test: /\.png$/,
                 use: {
@@ -29,43 +30,18 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
-            },
-            {
-                test: /\.html$/i,
-                loader: 'html-loader',
-                options: {
-                    attributes: {
-                        list: [
-                            // All default supported tags and attributes
-                            '...',
-                            {
-                              tag: 'img',
-                              attribute: 'data-src',
-                              type: 'src',
-                            },
-                            {
-                              tag: 'img',
-                              attribute: 'data-srcset',
-                              type: 'srcset',
-                            },
-                            {
-                              // Tag name
-                              tag: 'a',
-                              // Attribute name
-                              attribute: 'href',
-                              // Type of processing, can be `src` or `scrset`
-                              type: 'src'
-                              // Allow to filter some attributes
-                             
-                            },
-                          ],
-                    }
-                }
             }
+           
         ]
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            title: 'webpack Plugin Sample',
+            template: './src/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'about.html'
+        })
     ]
 }
