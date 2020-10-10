@@ -1,6 +1,7 @@
 const path = require('path')
 const {CleanWebpackPlugin} =  require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = {
     mode: 'none',
     entry: './src/index.js',
@@ -8,6 +9,9 @@ module.exports = {
         filename: 'main.js',
         path:path.join(__dirname, 'dist'),
         // publicPath: 'dist/',
+    },
+    devServer: {
+        contentBase: './public' // 额外为开发服务器指定查找资源目录
     },
     module: {
         rules: [
@@ -42,6 +46,13 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             filename: 'about.html'
-        })
+        }),
+
+        //开发阶段最好不要用这个插件，他会频繁赋值静态文件 
+        // new CopyWebpackPlugin({
+        //     patterns:[
+        //         { from: 'public', to: '' }
+        //     ]
+        // })
     ]
 }
