@@ -8,4 +8,4 @@ document.body.append(heading)
 const img = new Image()
 img.src = icon
 document.body.append(img)
-document.write(footerHteml)
+// document.write(footerHteml)
