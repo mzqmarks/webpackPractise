@@ -13,6 +13,7 @@ module.exports = {
     devServer: {
         contentBase: './public' // 额外为开发服务器指定查找资源目录
     },
+    devtool: 'source-map',
     module: {
         rules: [
             { test: /\.css$/, use:['style-loader', 'css-loader'] },
