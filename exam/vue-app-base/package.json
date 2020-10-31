@@ -12,7 +12,9 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
-    "webpack-cli": "^4.1.0"
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.2.0",
+    "style-loader": "^2.0.0"
   },
   "eslintConfig": {
     "root": true,
