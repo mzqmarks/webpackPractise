@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "echo \"请使用 Webpack Dev Server 实现此任务\"",
-    "build": "webpack",
+    "build": "webpack --config webpack.prod.js",
     "lint": "echo \"请使用 ESLint 实现此任务\""
   },
   "dependencies": {
