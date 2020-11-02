@@ -1,5 +1,4 @@
 const path = require('path')
-// const CleanWebpackPlugin = require('clean-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
@@ -25,7 +24,7 @@ module.exports = {
               loader: 'url-loader',
               options: {
                 esModule: false,
-                limit: 10240
+                limit: 10 * 1024
               }
             }
           },
@@ -36,7 +35,8 @@ module.exports = {
           {
             test: /\.css$/,
             use: [
-              'vue-style-loader',
+			  'vue-style-loader',
+			  'style-loader',
               'css-loader'
             ]
           },
